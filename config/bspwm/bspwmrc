@@ -1,0 +1,34 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d I II III IV V VI VII VIII
+
+# Borders
+bspc config border_width            2
+# Separation between windows
+bspc config window_gap              4
+# Paddings
+bspc config top_padding             10
+bspc config bottom_padding          10
+bspc config left_padding            2
+bspc config right_padding           2
+
+bspc config split_ratio             0.52
+bspc config borderless_monocle      true
+bspc config gapless_monocle         true
+bspc config focus_follows_pointer   true
+xsetroot -cursor_name left_ptr &
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+# Wallpaper
+feh --bg-fill ~/.config/wallpapers/kali-neon-16x9.png
+# Polybar
+~/.config/polybar/./launch.sh
+# Picom
+picom --experimental-backends &
