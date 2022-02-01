@@ -9,8 +9,12 @@ super + Return
  
 # program launcher
 alt + space
-    rofi -show run
- 
+    rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/scripts/rofi/launcher.rasi
+
+# polybar style menu
+super + alt + space
+    ~/.config/polybar/scripts/style-switch.sh
+
 # make sxhkd reload its configuration files:
 super + Escape
     pkill -USR1 -x sxhkd
@@ -129,3 +133,7 @@ alt + super + {Left,Down,Up,Right}
 # Open Firefox
 super + shift + F
 	firejail /opt/firefox/firefox
+
+# Open Thunar
+super + shift + E
+    thunar
