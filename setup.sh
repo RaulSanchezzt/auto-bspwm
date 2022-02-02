@@ -117,15 +117,19 @@ sudo apt -y install default-jdk
 
 # Move config files
 mv config/* ~/.config/
-# cp .p10k.zsh ~/
-# cp .zshrc ~/ 
+cp .p10k.zsh ~/
+cp .zshrc ~/ 
 
 # Add Powerlevel10K Root Shell
-# sudo ln -s -f ~/.p10k.zsh /root/.p10k.zsh
-# sudo cp -r ~/powerlevel10k/ /root
+sudo ln -s -f ~/.p10k.zsh /root/.p10k.zsh
+sudo cp -r ~/powerlevel10k/ /root
 
 # Zsh Symlink with root
 sudo ln -s -f ~/.zshrc /root/.zshrc
+
+# Zsh plugins
+sudo mv zsh-plugins/ /usr/share
+sudo chown $USER:$GRP /usr/share/zsh-plugins
 
 # Nvim Symlink with vim
 # sudo ln /usr/bin/nvim /usr/bin/vim -sf
@@ -137,7 +141,7 @@ sudo cp -r ~/.config /root
 cp -rf fonts/ ~/.local/share
 
 # zsh Insecure Shell Fix
-# sudo chown -R root:root /usr/local/share/zsh/site-functions/_bspc && sudo chmod -R 755 /usr/local/share/zsh/site-functions/_bspc
+sudo chown -R root:root /usr/local/share/zsh/site-functions/_bspc && sudo chmod -R 755 /usr/local/share/zsh/site-functions/_bspc
 
 # Allow Low-Priv Users to Capture Packets (this is because of rofi)
 sudo dpkg-reconfigure wireshark-common
