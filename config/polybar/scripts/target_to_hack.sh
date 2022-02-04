@@ -1,9 +1,9 @@
 #!/bin/sh
 
-target=$(cat ~/.config/scripts/target)
+target=$(cat ~/.config/polybar/scripts/target)
 
 if [ $target ]; then
-    echo "什 $target"
+    echo " $target"
 else
-    echo "什 No target"
+    echo " No target"
 fi
