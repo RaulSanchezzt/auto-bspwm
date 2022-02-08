@@ -102,6 +102,7 @@ sudo apt -y install apt-transport-https azure-cli powershell
 cd ~
 wget -O ~/.gdbinit-gef.py -q http://gef.blah.cat/py
 echo source ~/.gdbinit-gef.py >> ~/.gdbinit
+cd $DIR
 
 # Firefox Standard
 sudo chown $USER:$GRP /opt/
