@@ -38,6 +38,12 @@ alias cat='/usr/bin/bat'
 alias catn='/usr/bin/cat'
 alias catnl='/bin/bat --paging=never'
 
+# ========== GIT ALIAS ========== #
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+
 # ========== ZSH PLUGINS ========== #
 
 # SUDO
@@ -156,7 +162,7 @@ if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 fi
 
 # Functions
-function mk(){
+function mkt(){
     mkdir {scans,content,loot,exploits,scripts,report}
 }
 
@@ -235,11 +241,11 @@ function remove(){
 
 function settarget(){
     target=$1
-    echo "$target" > ~/.config/scripts/target
+    echo "$target" > ~/.config/polybar/scripts/target
 }
 
 function cleartarget(){
-    echo '' > ~/.config/scripts/target
+    echo '' > ~/.config/polybar/scripts/target
 }
 
 function PSCredential () {
