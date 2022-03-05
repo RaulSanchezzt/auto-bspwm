@@ -44,6 +44,9 @@ alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 
+# ========== METASPLOIT ALIAS ========== #
+alias msfconsole='sh ~/.config/polybar/scripts/metasploit.sh'
+
 # ========== ZSH PLUGINS ========== #
 
 # SUDO
