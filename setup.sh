@@ -33,6 +33,10 @@ sudo apt install -y bison flex check libpango-1.0-0 libpango1.0-dev libpangocair
 # tmux
 sudo apt install -y libevent-dev 
 
+# ripgrep - Nvchad telescope
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+sudo dpkg -i ripgrep_13.0.0_amd64.deb
+
 # PROGRAMS
 
 # bspwm and sxhkd
@@ -133,7 +137,7 @@ sudo mv zsh-plugins/ /usr/share
 sudo chown $USER:$GRP /usr/share/zsh-plugins
 
 # Nvim Symlink with vim
-# sudo ln /usr/bin/nvim /usr/bin/vim -sf
+sudo ln /usr/bin/nvim /usr/bin/vim -sf
 
 # Copy to /root
 sudo cp -r ~/.config /root
@@ -151,6 +155,10 @@ sudo dpkg-reconfigure wireshark-common
 chmod -R 755 ~/.config/bspwm
 chmod -R 755 ~/.config/polybar
 
+# Nvim - NvChad
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+sudo git clone https://github.com/NvChad/NvChad /root/.config/nvim --depth 1
+nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 
 #================================================================= END =================================================================#
 
