@@ -38,6 +38,7 @@ alias cat='/usr/bin/bat'
 alias catn='/usr/bin/cat'
 alias catnl='/bin/bat --paging=never'
 alias fs='flameshot gui'
+alias np='sh ~/Documentos/new-post-blog/new_post.sh'
 
 # ========== GIT ALIAS ========== #
 alias gs='git status'
