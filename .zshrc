@@ -244,12 +244,12 @@ function remove(){
     shred -zun 10 -v $1
 }
 
-function settarget(){
+function st(){
     target=$1
     echo "$target" > ~/.config/polybar/scripts/target
 }
 
-function cleartarget(){
+function ct(){
     echo '' > ~/.config/polybar/scripts/target
 }
 
