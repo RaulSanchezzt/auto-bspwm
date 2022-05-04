@@ -88,8 +88,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 # lsd and bat
 wget "https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb"
 sudo dpkg -i "lsd_0.21.0_amd64.deb"
-wget "https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb"
-sudo dpkg -i "bat_0.19.0_amd64.deb"
+wget "https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb"
+sudo dpkg -i "bat_0.20.0_amd64.deb"
 
 # radare2
 git clone https://github.com/radareorg/radare2
