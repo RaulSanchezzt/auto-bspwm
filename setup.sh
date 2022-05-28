@@ -30,9 +30,6 @@ sudo apt install -y meson libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfix
 # rofi
 sudo apt install -y bison flex check libpango-1.0-0 libpango1.0-dev libpangocairo-1.0-0 libcairo2 libglib2.0-dev libgdk-pixbuf-2.0-0 libstartup-notification0 libstartup-notification0-dev libgdk-pixbuf-2.0-dev libxkbcommon-dev libxkbcommon-x11-dev libxcb-xkb-dev libxcb-randr0-dev libxcb-xinerama0-dev libxcb-util-dev libxcb-cursor-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xrm-dev librsvg2-dev
 
-# tmux
-sudo apt install -y libevent-dev 
-
 # ripgrep - Nvchad telescope
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
 sudo dpkg -i ripgrep_13.0.0_amd64.deb
@@ -64,14 +61,6 @@ mkdir build && cd build
 make
 sudo make install
 cd ../../
-
-# tmux
-wget https://github.com/tmux/tmux/releases/download/3.2a/tmux-3.2a.tar.gz
-tar -xvf tmux-3.2a.tar.gz
-cd tmux-3.2a
-./configure && make
-sudo make install
-cd ../
 
 # Meslo Nerd Fonts
 sudo curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf --output /usr/local/share/fonts/'MesloLGS NF Regular.ttf'
@@ -107,13 +96,6 @@ cd ~
 wget -O ~/.gdbinit-gef.py -q http://gef.blah.cat/py
 echo source ~/.gdbinit-gef.py >> ~/.gdbinit
 cd $DIR
-
-# Firefox Standard
-sudo chown $USER:$GRP /opt/
-sudo mkdir -p /opt/firefox/
-wget 'https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US' -O firefox.tar.bz2
-tar -xf firefox.tar.bz2
-sudo cp -r firefox/* /opt/firefox
 
 # java dependencies
 sudo apt -y install default-jdk
@@ -156,10 +138,8 @@ chmod -R 755 ~/.config/bspwm
 chmod -R 755 ~/.config/polybar
 
 # Nvim - NvChad
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-sudo git clone https://github.com/NvChad/NvChad /root/.config/nvim --depth 1
-nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
-
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 ; nvim
+sudo git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 ; nvim
 #================================================================= END =================================================================#
 
 # Delete files
