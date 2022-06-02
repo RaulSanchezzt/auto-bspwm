@@ -102,10 +102,7 @@ sudo apt -y install default-jdk
 
 #============================================================ CONFIGURATION ============================================================#
 
-# Move config files
-mv config/* ~/.config/
-cp .p10k.zsh ~/
-cp .zshrc ~/ 
+# My dotfiles -> https://github.com/RaulSanchezzt/dotfiles
 
 # Add Powerlevel10K Root Shell
 sudo ln -s -f ~/.p10k.zsh /root/.p10k.zsh
@@ -121,9 +118,6 @@ sudo chown $USER:$GRP /usr/share/zsh-plugins
 # Nvim Symlink with vim
 sudo ln /usr/bin/nvim /usr/bin/vim -sf
 
-# Copy to /root
-sudo cp -r ~/.config /root
-
 # Move polybar fonts
 cp -rf fonts/ ~/.local/share
 
@@ -132,10 +126,6 @@ sudo chown -R root:root /usr/local/share/zsh/site-functions/_bspc && sudo chmod 
 
 # Allow Low-Priv Users to Capture Packets (this is because of rofi)
 sudo dpkg-reconfigure wireshark-common
-
-# Execute Permissions
-chmod -R 755 ~/.config/bspwm
-chmod -R 755 ~/.config/polybar
 
 # Nvim - NvChad
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 ; nvim
