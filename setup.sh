@@ -12,9 +12,12 @@ yellow="\e[0;33m\033[1m"
 
 #=============================================================== INSTALL ===============================================================#
 
-# TOOLS
+# TOOLS 
 sudo apt update -y
-sudo apt install -y git gnome-terminal firejail wmname manpages-dev python3 python3-dev arandr scrub flameshot arc-theme fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel zsh zsh-autosuggestions zsh-syntax-highlighting feh bspwm sxhkd polybar rbenv htop lxappearance python3-pip unclutter  papirus-icon-theme imagemagick neovim ranger watchman libfreetype6-dev libfontconfig1-dev
+sudo apt install -y git kitty firejail wmname manpages-dev python3 python3-dev arandr scrub flameshot arc-theme fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel zsh zsh-autosuggestions zsh-syntax-highlighting feh bspwm sxhkd polybar rbenv htop lxappearance python3-pip unclutter  papirus-icon-theme imagemagick bat ranger watchman libfreetype6-dev libfontconfig1-dev flatpak
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepoif
+flatpak install flathub it.mijorus.smile
 
 # DEPENDENCIES
 
@@ -71,14 +74,10 @@ fc-cache -v
 
 # Powerlevel10K
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-# echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
-#sudo cp -r zsh-plugins/zsh-autocomplete /usr/share/
 
-# lsd and bat
+# lsd
 wget "https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb"
 sudo dpkg -i "lsd_0.21.0_amd64.deb"
-wget "https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb"
-sudo dpkg -i "bat_0.20.0_amd64.deb"
 
 # radare2
 git clone https://github.com/radareorg/radare2
@@ -127,9 +126,6 @@ sudo chown -R root:root /usr/local/share/zsh/site-functions/_bspc && sudo chmod 
 # Allow Low-Priv Users to Capture Packets (this is because of rofi)
 sudo dpkg-reconfigure wireshark-common
 
-# Nvim - NvChad
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 ; nvim
-sudo git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 ; nvim
 #================================================================= END =================================================================#
 
 # Delete files
