@@ -17,8 +17,7 @@ sudo apt update -y
 sudo apt install -y git kitty firejail wmname manpages-dev python3 python3-dev arandr scrub flameshot arc-theme fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel zsh zsh-autosuggestions zsh-syntax-highlighting feh bspwm sxhkd polybar rbenv htop lxappearance python3-pip unclutter  papirus-icon-theme imagemagick bat ranger watchman libfreetype6-dev libfontconfig1-dev flatpak
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepoif
-flatpak install flathub it.mijorus.smile
-
+flatpak install -y flathub it.mijorus.smile com.zettlr.Zettlr
 # DEPENDENCIES
 
 # bspwm
