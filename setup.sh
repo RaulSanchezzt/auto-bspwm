@@ -119,6 +119,10 @@ sudo ln /usr/bin/nvim /usr/bin/vim -sf
 # Move polybar fonts
 cp -rf fonts/ ~/.local/share
 
+# Move whichSystem.py 
+sudo cp tools/whichSystem.py /usr/bin
+sudo chmod +x /usr/bin/whichSystem.py
+
 # zsh Insecure Shell Fix
 sudo chown -R root:root /usr/local/share/zsh/site-functions/_bspc && sudo chmod -R 755 /usr/local/share/zsh/site-functions/_bspc
 
