@@ -18,7 +18,7 @@ sudo apt install -y git kitty firejail wmname manpages-dev python3 python3-dev a
 
 # FLATPAK APPS
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepoif
-flatpak install -y flathub it.mijorus.smile com.github.marktext.marktext org.gnome.FontManager
+flatpak install -y flathub it.mijorus.smile com.github.marktext.marktext org.gnome.FontManager md.obsidian.Obsidian
 
 # DEPENDENCIES
 
