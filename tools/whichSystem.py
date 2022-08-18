@@ -1,24 +1,29 @@
 #!/usr/bin/python3
 #coding: utf-8
  
-import re, sys, subprocess
+import re, sys, subprocess, ipaddress
  
-# python3 wichSystem.py 10.10.10.188 
+# python3 wichSystem.py 10.10.10.14 
  
 if len(sys.argv) != 2:
-    print("\n[!] Uso: python3 " + sys.argv[0] + " <direccion-ip>\n")
+    print("\n[!] Use: python3 " + sys.argv[0] + " < IP_ADDRESS | HOSTNAME >\n")
     sys.exit(1)
  
-def get_ttl(ip_address):
+def get_ttl(target):
  
-    proc = subprocess.Popen(["/usr/bin/ping -c 1 %s" % ip_address, ""], stdout=subprocess.PIPE, shell=True)
+    proc = subprocess.Popen(["/usr/bin/ping -c 1 %s" % target, ""], stdout=subprocess.PIPE, shell=True)
     (out,err) = proc.communicate()
  
     out = out.split()
-    out = out[12].decode('utf-8')
- 
-    ttl_value = re.findall(r"\d{1,3}", out)[0]
- 
+
+    # Check if the target is an IP Address or a Hostname
+    try:
+        ip = ipaddress.ip_address(target)
+        out = out[12].decode('utf-8')
+    except ValueError:
+        out = out[13].decode('utf-8')
+
+    ttl_value = re.findall(r"\d{1,3}", out)[0] 
     return ttl_value
  
 def get_os(ttl):
@@ -34,9 +39,9 @@ def get_os(ttl):
  
 if __name__ == '__main__':
  
-    ip_address = sys.argv[1]
+    target = sys.argv[1]
  
-    ttl = get_ttl(ip_address)
+    ttl = get_ttl(target)
  
     os_name = get_os(ttl)
-    print("\n%s (ttl -> %s): %s\n" % (ip_address, ttl, os_name))
+    print("\n%s (TTL -> %s): %s\n" % (target, ttl, os_name))
