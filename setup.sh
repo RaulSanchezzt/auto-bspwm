@@ -1,23 +1,13 @@
 #!/bin/bash
 
-#============================================================== VARIABLES ==============================================================#
-
-DIR=`pwd`
-GRP=$(id -gn $USER)
-
-#=============================================================== COLORS ================================================================#
-
-end="\033[0m\e[0m"
-yellow="\e[0;33m\033[1m"
-
 #=============================================================== INSTALL ===============================================================#
 
 # TOOLS 
 sudo apt update -y
-sudo apt install -y git kitty firejail wmname manpages-dev python3 python3-dev arandr scrub flameshot arc-theme fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel zsh zsh-autosuggestions zsh-syntax-highlighting feh bspwm sxhkd polybar rbenv htop lxappearance python3-pip unclutter  papirus-icon-theme imagemagick bat ranger watchman libfreetype6-dev libfontconfig1-dev flatpak
+sudo apt install -y git kitty wmname manpages-dev python3 python3-dev arandr scrub flameshot arc-theme fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel zsh zsh-autosuggestions zsh-syntax-highlighting feh bspwm sxhkd polybar rbenv htop lxappearance python3-pip unclutter  papirus-icon-theme imagemagick bat ranger watchman libfreetype6-dev libfontconfig1-dev flatpak
 
 # FLATPAK APPS
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepoif
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install -y flathub it.mijorus.smile com.github.marktext.marktext org.gnome.FontManager md.obsidian.Obsidian
 
 # DEPENDENCIES
@@ -77,8 +67,8 @@ fc-cache -v
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 
 # lsd
-wget "https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb"
-sudo dpkg -i "lsd_0.21.0_amd64.deb"
+wget "https://github.com/Peltoche/lsd/releases/download/0.22.0/lsd_0.22.0_amd64.deb"
+sudo dpkg -i "lsd_0.22.0_amd64.deb"
 
 # radare2
 git clone https://github.com/radareorg/radare2
