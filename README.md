@@ -60,13 +60,13 @@ nvim --version
 NVIM v0.6.1
 Build type: Release
 LuaJIT 2.1.0-beta3
-Compilado por team+vim@tracker.debian.org
+Compiled by team+vim@tracker.debian.org
 
 Features: +acl +iconv +tui
 See ":help feature-compile"
 
-     archivo "vimrc" del sistema: "$VIM/sysinit.vim"
-            predefinido para $VIM: "/usr/share/nvim"
+     system "vimrc" file: "$VIM/sysinit.vim"
+            fall-back for $VIM: "/usr/share/nvim"
 
 Run :checkhealth for more info
 ```
@@ -74,7 +74,7 @@ Run :checkhealth for more info
 2. Download the latest version from the official source
 
 ```bash
-wget https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb
+wget https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb
 ```
 
 3. Make sure you have the system updated
@@ -108,17 +108,16 @@ sudo apt install ./nvim-linux64.deb
 7. After having installed the new version, check the version again
 
 ```bash
-nvim --version
-NVIM v0.7.0
+NVIM v0.7.2
 Build type: Release
 LuaJIT 2.1.0-beta3
-Compilado por runner@fv-az316-460
+Compiled by runner@fv-az164-457
 
 Features: +acl +iconv +tui
 See ":help feature-compile"
 
-     archivo "vimrc" del sistema: "$VIM/sysinit.vim"
-            predefinido para $VIM: "/share/nvim"
+   system vimrc file: "$VIM/sysinit.vim"
+  fall-back for $VIM: "/share/nvim"
 
 Run :checkhealth for more info
 ```
