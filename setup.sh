@@ -82,10 +82,8 @@ pip3 install boto3 ansi2html detect-secrets
 sudo apt -y install apt-transport-https azure-cli powershell
 
 # Install GEF gdb plugin
-cd ~
 wget -O ~/.gdbinit-gef.py -q http://gef.blah.cat/py
 echo source ~/.gdbinit-gef.py >> ~/.gdbinit
-cd $DIR
 
 # java dependencies
 sudo apt -y install default-jdk
@@ -102,7 +100,9 @@ sudo cp -r ~/powerlevel10k/ /root
 sudo ln -s -f ~/.zshrc /root/.zshrc
 
 # Zsh plugins
-sudo mv zsh-plugins/ /usr/share
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
+sudo mkdir /usr/share/zsh-plugins
+sudo mv sudo.plugin.zsh /usr/share/zsh-plugins
 sudo chown $USER:$GRP /usr/share/zsh-plugins
 
 # Nvim Symlink with vim
