@@ -1,15 +1,19 @@
-# kali-bspwm
-> This is a bash script that install all the  you need to use [Kali Linux ](https://www.kali.org/) with a tiling window manager like [bspwm](https://github.com/baskerville/bspwm).
+# auto-bspwm
+> This is a bash script that install all the  you need to use in a Linux Distro with a tiling window manager like [bspwm](https://github.com/baskerville/bspwm).
 
 ## Installation
-1. Make sure to disable sleep because the script can take a while to finish
+1. Make sure to disable sleep because the script can take a while to finish.
 
-![disable sleep](media/power-manager.png)
+![disable sleep](assets/power-manager.png)
 
-2. Clone this repository and change the directory
+2. Clone this repository and change the directory.
 
 ```bash
-git clone https://github.com/RaulSanchezzt/kali-bspmw.git && cd kali-bspwm
+# Using HTTP
+$ git clone https://github.com/RaulSanchezzt/auto-bspwm.git && cd /auto-bspwm
+
+# Using SSH
+$ git clone git@github.com:RaulSanchezzt/auto-bspwm.git && cd /auto-bspwm
 ```
 
 3. Give the current user execute permissions
@@ -44,15 +48,15 @@ sudo reboot now
 
 9. Once you have rebooted the machine, select `bspwm` as the window manager and then login.
 
-![login](media/login.png)
+![login](assets/login.png)
 
 10. This will be the final result. Start a new terminal using `Super + Intro`
 
-![final result](media/result.png)
+![final result](assets/result.png)
 
-## How to update Nvim v0.61 to Nvim v0.7.0 in Kali Linux
+## How to update Nvim v0.61 to Nvim v0.7.0 in Linux
 
-> Once you have installed Kali Linux, you may have installed `Nvim` v0.61 by default. If you would like to use a custom configuration like [NvChad](https://github.com/NvChad/NvChad) you will have to update `Nvim` this way.
+> Once you have installed Linux, you may have installed `Nvim` v0.61 by default. If you would like to use a custom configuration like [NvChad](https://github.com/NvChad/NvChad) you will have to update `Nvim` this way.
 
 1. Check if your version is under v0.7.0
 ```bash
