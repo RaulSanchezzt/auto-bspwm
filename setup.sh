@@ -4,7 +4,7 @@
 
 # TOOLS 
 sudo apt update -y
-sudo apt install -y git kitty wmname manpages-dev python3 python3-dev arandr scrub flameshot arc-theme fish  fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel feh bspwm sxhkd polybar rbenv htop lxappearance python3-pip unclutter  papirus-icon-theme imagemagick bat ranger watchman libfreetype6-dev libfontconfig1-dev flatpak
+sudo apt install -y git kitty wmname manpages-dev python3 python3-dev arandr scrub flameshot arc-theme fish fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel feh bspwm sxhkd polybar rbenv htop lxappearance python3-pip unclutter  papirus-icon-theme imagemagick bat ranger watchman libfreetype6-dev libfontconfig1-dev flatpak
 
 # FLATPAK APPS
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -70,17 +70,6 @@ sudo dpkg -i "lsd_0.22.0_amd64.deb"
 # radare2
 git clone https://github.com/radareorg/radare2
 radare2/sys/install.sh
-
-# AWS Tools / AWS-S3
-sudo apt -y install awscli
-pip3 install boto3 ansi2html detect-secrets
-
-# Azure CLI and PowerShell
-sudo apt -y install apt-transport-https azure-cli powershell
-
-# Install GEF gdb plugin
-wget -O ~/.gdbinit-gef.py -q http://gef.blah.cat/py
-echo source ~/.gdbinit-gef.py >> ~/.gdbinit
 
 # java dependencies
 sudo apt -y install default-jdk
