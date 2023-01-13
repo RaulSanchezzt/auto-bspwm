@@ -63,6 +63,9 @@ sudo curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%
 sudo curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf --output /usr/local/share/fonts/'MesloLGS NF Bold Italic.ttf'
 fc-cache -v
 
+# Starship
+curl -sS https://starship.rs/install.sh | sh
+
 # lsd
 wget "https://github.com/Peltoche/lsd/releases/download/0.22.0/lsd_0.22.0_amd64.deb"
 sudo dpkg -i "lsd_0.22.0_amd64.deb"
