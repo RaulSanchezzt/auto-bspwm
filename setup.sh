@@ -4,7 +4,7 @@
 
 # TOOLS 
 sudo apt update -y
-sudo apt install -y git kitty wmname manpages-dev python3 python3-dev arandr scrub flameshot arc-theme fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel zsh zsh-autosuggestions zsh-syntax-highlighting feh bspwm sxhkd polybar rbenv htop lxappearance python3-pip unclutter  papirus-icon-theme imagemagick bat ranger watchman libfreetype6-dev libfontconfig1-dev flatpak
+sudo apt install -y git kitty wmname manpages-dev python3 python3-dev arandr scrub flameshot arc-theme fish  fzf ripgrep universal-ctags silversearcher-ag fd-find xclip xsel feh bspwm sxhkd polybar rbenv htop lxappearance python3-pip unclutter  papirus-icon-theme imagemagick bat ranger watchman libfreetype6-dev libfontconfig1-dev flatpak
 
 # FLATPAK APPS
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -63,9 +63,6 @@ sudo curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%
 sudo curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf --output /usr/local/share/fonts/'MesloLGS NF Bold Italic.ttf'
 fc-cache -v
 
-# Powerlevel10K
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-
 # lsd
 wget "https://github.com/Peltoche/lsd/releases/download/0.22.0/lsd_0.22.0_amd64.deb"
 sudo dpkg -i "lsd_0.22.0_amd64.deb"
@@ -92,19 +89,6 @@ sudo apt -y install default-jdk
 
 # My dotfiles -> https://github.com/RaulSanchezzt/dotfiles
 
-# Add Powerlevel10K Root Shell
-sudo ln -s -f ~/.p10k.zsh /root/.p10k.zsh
-sudo cp -r ~/powerlevel10k/ /root
-
-# Zsh Symlink with root
-sudo ln -s -f ~/.zshrc /root/.zshrc
-
-# Zsh plugins
-wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
-sudo mkdir /usr/share/zsh-plugins
-sudo mv sudo.plugin.zsh /usr/share/zsh-plugins
-sudo chown $USER:$GRP /usr/share/zsh-plugins
-
 # Nvim Symlink with vim
 sudo ln /usr/bin/nvim /usr/bin/vim -sf
 
@@ -114,9 +98,6 @@ cp -rf fonts/ ~/.local/share
 # Move whichSystem.py 
 sudo cp tools/whichSystem.py /usr/bin
 sudo chmod +x /usr/bin/whichSystem.py
-
-# zsh Insecure Shell Fix
-sudo chown -R root:root /usr/local/share/zsh/site-functions/_bspc && sudo chmod -R 755 /usr/local/share/zsh/site-functions/_bspc
 
 # Allow Low-Priv Users to Capture Packets (this is because of rofi)
 sudo dpkg-reconfigure wireshark-common
